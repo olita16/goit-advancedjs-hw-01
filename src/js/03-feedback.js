@@ -1,7 +1,6 @@
 
 import throttle from 'lodash.throttle';
 
-
 const LOCAL_KEY = 'feedback-form-state';
 let formData = {};
 
@@ -28,13 +27,16 @@ function onInputData(e) {
 function onFormSubmit(e) {
   e.preventDefault();
 
-  const { email, message } = e.currentTarget.elements;
-  console.log({ email: email.value.trim(), message: message.value.trim() });
+  const { email, message } = formData;
 
-  if (localStorage.getItem(LOCAL_KEY)) {
-
-    localStorage.removeItem(LOCAL_KEY);
+  if (!email || !message) {
+    alert('Будь ласка, заповніть всі поля');
+    return;
   }
+
+  console.log({ email, message });
+
+  localStorage.removeItem(LOCAL_KEY);
   e.currentTarget.reset();
   formData = {};
 }
