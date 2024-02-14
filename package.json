@@ -5,7 +5,7 @@
   "homepage": "https://olita16.github.io/goit-advancedjs-hw-01/",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /goit-js-advancedjs-01/"
+    "build": "parcel build src/*.html --public-url /goit-advancedjs-hw-01/"
   },
   "repository": {
     "type": "git",
